@@ -132,3 +132,9 @@ clear way up:
 clear way down: 
 	edit.extend_file_end()
 	edit.delete()
+
+save this:
+    edit.save()
+
+save all:
+    edit.save()
