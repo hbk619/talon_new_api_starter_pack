@@ -103,7 +103,7 @@ insert template <phrase> [over]:
 action(user.ide_create_template): user.idea("action SaveAsTemplate")
 
 action(user.ide_run_menu): user.idea("action ChooseRunConfiguration")
-action(user.ide_run_again): user.idea("action Run")
+action(user.ide_run_again): user.idea("action Rerun")
 # Recording
 action(user.ide_toggle_recording): user.idea("action StartStopMacroRecording")
 action(user.ide_change_recording): user.idea("action EditMacros")
