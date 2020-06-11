@@ -1,9 +1,6 @@
-os: linux
-app: /termite/
+tag: terminal
 not win.title: /VIM/
 -
-tag(): terminal
-
 # Selection mode
 shell yank: key("y")
 shell select: key("ctrl-shift-space")

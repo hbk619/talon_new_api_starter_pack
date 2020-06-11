@@ -1,7 +1,8 @@
 os: linux
-tag: terminal
+app: /terminal/
+app: /termite/
 -
-
+tag(): terminal
 action(edit.page_down):
   key(shift-pagedown)
 action(edit.page_up):
