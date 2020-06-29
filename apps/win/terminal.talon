@@ -2,6 +2,7 @@ os: windows
 app: Windows Command Processor
 app: cmd.exe
 app: WindowsTerminal.exe
+app: mintty.exe
 -
 tag(): terminal
 tag(): file_manager

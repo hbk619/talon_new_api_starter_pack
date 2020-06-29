@@ -1,4 +1,5 @@
 os: linux
+os: windows
 app: /Teams/
 app: /teams/
 -
