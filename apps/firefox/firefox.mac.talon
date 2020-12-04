@@ -37,6 +37,9 @@ action(browser.go_blank):
 action(browser.go_back):
 	key(cmd-left)
 
+action(user.ide_go_back):
+    key(cmd-left)
+
 action(browser.go_forward):
 	key(cmd-right)
 	
@@ -73,3 +76,19 @@ action(browser.submit_form):
 
 action(browser.toggle_dev_tools):
 	key(cmd-alt-i)
+
+action(user.ide_find_file):
+    key(cmd-p)
+
+action(user.ide_toggle_breakpoint):
+    key(cmd-b)
+
+action(user.ide_continue):
+    key(f8)
+
+go <number>:
+    key(ctrl-g)
+    sleep("100ms")
+    insert(number)
+    sleep("100ms")
+    key(enter)
