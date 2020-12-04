@@ -24,7 +24,7 @@ kill all:
   key(ctrl-c)
 rerun search:
   key(ctrl-r)
-run last:
+run (last|again):
   key(up)
   key(enter)
 action(edit.page_down):
