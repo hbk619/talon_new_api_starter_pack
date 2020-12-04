@@ -17,7 +17,7 @@ settings():
 action(user.code_is_not_null): ".nil?"
 
 action(user.code_is_null): ".nil?"
-
+action(user.code_comment): "#"
 action(user.code_type_dictionary):
   insert("{}")
   key(left)
@@ -61,6 +61,11 @@ action(user.code_from_import):
 
 action(user.code_type_class): "class "
 
+state class <user.format_text>$:
+    user.code_type_class()
+    insert(format_text)
+    key(enter)
+
 action(user.code_include): ""
 
 action(user.code_include_system): ""
@@ -78,7 +83,7 @@ action(user.code_state_for_each):
 
 action(user.code_null): "nil"
 
-action(user.code_print): "puts 9"
+action(user.code_print): "puts"
 
 action(user.code_private_function):
     insert("def ")
@@ -168,3 +173,45 @@ state reduce:
   key(left)
 
 state spread: "..."
+
+assign local <phrase>:
+    user.code_private_variable_formatter(phrase)
+    user.code_operator_assignment()
+
+assign instance <phrase>:
+    insert("@")
+    user.code_private_variable_formatter(phrase)
+    user.code_operator_assignment()
+
+instance <phrase>:
+    insert("@")
+    user.code_private_variable_formatter(phrase)
+
+state before:
+    insert("before do")
+    key(enter)
+
+state allow receive <phrase>:
+    insert("allow ({phrase}).to receive(:")
+
+spec context <user.format_text>:
+    insert("context '{format_text}'")
+
+spec it <user.text>:
+    insert("it '{text}' do")
+    key(enter)
+
+spec describe <user.format_text>:
+    insert("RSpec.describe {format_text} do")
+    key(enter)
+
+test expect <user.format_text> to be <phrase>:
+    insert("expect({format_text}).to be({phrase}")
+
+do block:
+    insert("do")
+    key(enter)
+
+state require <user.format_text>:
+    insert("require '{format_text}'")
+    key(enter)
