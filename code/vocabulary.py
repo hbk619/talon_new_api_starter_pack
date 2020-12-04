@@ -50,7 +50,7 @@ _simple_vocab_default = ["nmap", "admin", "Cisco", "Citrix", "VPN", "DNS", "Mine
 # Talon's vocabulary.
 _mapping_vocab_default = {
     "N map": "nmap",
-    "under documented": "under-documented",
+    "under documented": "under-documented"
 }
 
 
