@@ -125,7 +125,7 @@ insert generated <user.text> [over]:
     sleep(500ms)
     insert(text)
 insert template <user.text> [over]:
-    idea("action InsertLiveTemplate")
+    user.idea("action InsertLiveTemplate")
     sleep(500ms)
     insert(text)
 create (template|snippet): user.idea("action SaveAsTemplate")
@@ -189,6 +189,9 @@ git (annotate | blame): user.idea("action Annotate")
 git menu: user.idea("action Vcs.QuickListPopupAction")
 # Tool windows:
 # Toggling various tool windows
+close project window:
+    user.idea("action ActivateProjectToolWindow")
+    user.idea("action ActivateProjectToolWindow")
 toggle project: user.idea("action ActivateProjectToolWindow")
 toggle find: user.idea("action ActivateFindToolWindow")
 toggle run: user.idea("action ActivateRunToolWindow")
@@ -322,3 +325,5 @@ go camel right: user.camel_right()
 blacken: user.idea("action BLACKReformatCode")
 
 fix this: user.idea("action ShowIntentionActions")
+open a file: user.idea("action OpenFile")
+paste history: key("cmd-shift-v")
