@@ -1,3 +1,3 @@
 app: Sublime Text
 -
-tag(): tabs
+tag(): user.tabs
