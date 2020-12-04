@@ -158,8 +158,8 @@ class Actions:
 def gui(gui: imgui.GUI):
     gui.text("Names of running applications")
     gui.line()
-    for line in ctx.lists["self.running"]:
-        gui.text(line)
+    for k, line in  ctx.lists['self.running'].items():
+        gui.text('Verbal name:' + k + '. Process name:' + line)
 
 
 def update_launch_list():
