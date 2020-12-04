@@ -201,9 +201,9 @@ simple_keys = [
 ]
 
 alternate_keys = {
-    "delete": "backspace",
-    "forward delete": "delete",
-    #'junk': 'backspace',
+    'delete': 'backspace', 
+    'junk': 'backspace',
+    'forward delete': 'delete',
 }
 keys = {k: k for k in simple_keys}
 keys.update(alternate_keys)
