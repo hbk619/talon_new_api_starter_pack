@@ -166,7 +166,7 @@ formatters_words = {
     "dubstring": formatters_dict["DOUBLE_QUOTED_STRING"],
     "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
-    # "say": formatters_dict["NOOP"],
+    "say": formatters_dict["NOOP"],
     "sentence": formatters_dict["CAPITALIZE_FIRST_WORD"],
     "slasher": formatters_dict["SLASH_SEPARATED"],
     "smash": formatters_dict["NO_SPACES"],
