@@ -138,9 +138,10 @@ elif app.platform == "mac":
     is_mac = True
     ctx.lists["user.file_manager_directory_remap"] = {"": "/Volumes"}
     ctx.lists["user.file_manager_directory_exclusions"] = {}
-    supported_programs = ["com.apple.Terminal", "com.apple.finder"]
+    supported_programs = ["com.apple.Terminal", "com.apple.finder",  "com.googlecode.iterm2"]
     terminal_programs = [
         "com.apple.Terminal",
+        "com.googlecode.iterm2"
     ]
 
 elif app.platform == "linux":
@@ -480,8 +481,7 @@ def update_maps(window):
         is_terminal = False
     else:
         if is_mac and "~" in title:
-            title = os.path.expanduser(title)
-
+            title = os.path.expanduser(title[title.find("~"):])
         # Handle hostname before path
         if is_linux and ":" in title:
             title = title.split(":")[1].strip()
@@ -581,7 +581,7 @@ def gui_files(gui: imgui.GUI):
     gui.line()
     index = 1
     current_index = (current_file_page - 1) * len(selection_numbers)
-
+    print(file_selections)
     while index <= len(selection_numbers) and current_index < len(file_selections):
         gui.text("{}: {} ".format(index, file_selections[current_index]))
         current_index = current_index + 1
