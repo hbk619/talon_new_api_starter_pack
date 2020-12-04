@@ -1,2 +1,5 @@
 grip, DataGrip
-py, jetbrains-pycharm-ce
+charm, jetbrains-pycharm
+py, jetbrains-rubymine
+ce, jetbrains-rubymine
+ruby, jetbrains-rubymine

@@ -3,7 +3,7 @@ app: jetbrains
 -
 tag(): user.line_commands
 tag(): user.multiple_cursors
-tag(): user.splits 
+tag(): user.splits
 tag(): user.tabs
 
 #talon app actions (+custom tab actions)
@@ -230,6 +230,21 @@ toggle distraction [free mode]: user.idea("action ToggleDistractionFreeMode")
 toggle presentation [mode]: user.idea("action TogglePresentationMode")
 # Toggle additionals
 toggle comment: code.toggle_comment()
+# Tabs
+go first tab: user.idea("action GoToTab1")
+go second tab: user.idea("action GoToTab2")
+go third tab: user.idea("action GoToTab3")
+go fourth tab: user.idea("action GoToTab4")
+go fifth tab: user.idea("action GoToTab5")
+go sixth tab: user.idea("action GoToTab6")
+go seventh tab: user.idea("action GoToTab7")
+go eighth tab: user.idea("action GoToTab8")
+go ninth tab: user.idea("action GoToTab9")
+action(user.tab_final): user.idea("action GoToLastTab")
+action(app.tab_next): user.idea("action NextTab")
+action(app.tab_previous): user.idea("action PreviousTab")
+action(app.tab_close): user.idea("action CloseActiveTab")
+
 # Quick popups
 change scheme: user.idea("action QuickChangeScheme")
  # Always javadoc
@@ -258,10 +273,10 @@ continue: user.idea("action Resume")
 # Movement
 go next (error | air): user.idea("action GotoNextError")
 go last (error | air): user.idea("action GotoPreviousError")
-fix next (error | air): 
+fix next (error | air):
   user.idea("action GotoNextError")
   user.idea("action ShowIntentionActions")
-fix last (error | air): 
+fix last (error | air):
   user.idea("action GotoPreviousError")
   user.idea("action ShowIntentionActions")
 # Special Selects
@@ -305,3 +320,5 @@ go camel right: user.camel_right()
 
 # requires plug-in: black-pycharm
 blacken: user.idea("action BLACKReformatCode")
+
+fix this: user.idea("action ShowIntentionActions")
