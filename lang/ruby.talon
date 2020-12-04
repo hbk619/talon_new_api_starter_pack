@@ -1,4 +1,4 @@
-mode: user.javascript
+mode: user.ruby
 mode: command 
 and code.language: ruby
 -
@@ -78,12 +78,14 @@ action(user.code_state_for_each):
 
 action(user.code_null): "nil"
 
+action(user.code_print): "puts 9"
+
 action(user.code_private_function):
-    insert("def  ")
+    insert("def ")
+
+action(user.code_end_private_function):
     key(enter)
-    key(enter)
-    insert("end")
-    key(up)
+
 action(user.code_protected_function):
     insert("def  ")
     key(enter)

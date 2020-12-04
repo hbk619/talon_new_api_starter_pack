@@ -284,6 +284,10 @@ class Actions:
     def code_state_return():
         """Inserts return statement"""
 
+    def code_print():
+        """Insert statement to output to stdout"""
+
+
     def code_break():
         """Inserts break statement"""
 
