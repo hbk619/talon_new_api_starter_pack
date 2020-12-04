@@ -76,17 +76,14 @@ action(user.code_type_definition): ""
 
 action(user.code_typedef_struct): ""
 
-action(user.code_state_for_each):
-  insert(".each { | }")
-  key(left)
-  key(left)
+#action(user.code_state_for_each):
+#  insert(".each { }")
+#  key(left)
+#  key(left)
 
 action(user.code_null): "nil"
 
 action(user.code_print): "puts"
-
-action(user.code_private_function):
-    insert("def ")
 
 action(user.code_end_private_function):
     key(enter)
@@ -107,9 +104,9 @@ action(user.code_public_function):
 action(user.code_operator_indirection): ""
 action(user.code_operator_address_of): ""
 action(user.code_operator_structure_deference): ""
-action(user.code_operator_lambda):
-    insert("lambda { }")
-    key(left)
+#action(user.code_operator_lambda):
+#    insert("lambda { | }")
+#    key(left)
 action(user.code_operator_subscript): 
   insert("[]")
   key(left)
@@ -174,18 +171,23 @@ state reduce:
 
 state spread: "..."
 
-assign local <phrase>:
-    user.code_private_variable_formatter(phrase)
+assign local <user.text>:
+    user.code_private_variable_formatter(text)
     user.code_operator_assignment()
 
-assign instance <phrase>:
+assign member <user.text>:
     insert("@")
-    user.code_private_variable_formatter(phrase)
+    user.code_private_variable_formatter(text)
     user.code_operator_assignment()
 
-instance <phrase>:
-    insert("@")
-    user.code_private_variable_formatter(phrase)
+create static <user.text>:
+    insert("@@")
+    user.code_private_variable_formatter(text)
+    user.code_operator_assignment()
+
+state describe:
+    insert("describe do")
+    key(enter)
 
 state before:
     insert("before do")
@@ -215,3 +217,17 @@ do block:
 state require <user.format_text>:
     insert("require '{format_text}'")
     key(enter)
+
+^funky <user.text>$:
+    user.code_private_function(text)
+    key(enter)
+
+^funky question <user.text>$:
+    user.code_private_function_question(text)
+    key(enter)
+
+^funky arguments <user.text>$: user.code_private_function_with_args(text)
+^funky arguments question <user.text>$: user.code_private_function_with_args_question(text)
+
+ternary <user.text> or <user.text>:
+    insert("? {text_1} : {text_2}")
