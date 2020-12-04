@@ -184,7 +184,12 @@ def update_launch_list():
                                 continue
 
                             launch[word] = path
-
+    elif talon.app.platform == 'linux':
+        launch = {
+            'firefox': 'firefox',
+            'keypass': 'keepassx',
+            'slack': 'slack'
+        }
         ctx.lists["user.launch"] = launch
 
 
