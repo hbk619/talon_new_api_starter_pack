@@ -62,6 +62,6 @@ mark channel read: key(esc)
 (slack | lack) invite: key(a)
     # Miscellaneous
 (slack | lack) shortcuts: key(cmd-/)
-emote <user.text>: "{text}"
+emote <user.text>: ":{text}"
 toggle left sidebar: key(cmd-shift-d)
 toggle right sidebar: key(cmd-.)
