@@ -34,10 +34,10 @@ action(user.code_state_else):
   insert(" else {}")
   key(left enter)
 
-action(user.code_block): 
-  insert("{}") 
+action(user.code_block):
+  insert("{}")
   key(left enter)
-  
+
 action(user.code_self): "this"
 
 action(user.code_state_while):
@@ -155,3 +155,6 @@ state spread: "..."
 ^funky <user.text>$: user.code_private_function(text)
 ^pro funky <user.text>$: user.code_protected_function(text)
 ^pub funky <user.text>$: user.code_public_function(text)
+export default: "export default "
+
+test file: ".test.jsx"
