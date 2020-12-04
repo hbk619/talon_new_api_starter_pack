@@ -115,6 +115,7 @@ class Actions:
     def mouse_toggle_control_mouse():
         """Toggles control mouse"""
         toggle_control(not config.control_mouse)
+        actions.user.mouse_toggle_zoom_mouse()
 
     def mouse_toggle_camera_overlay():
         """Toggles camera overlay"""
@@ -135,11 +136,12 @@ class Actions:
     def mouse_trigger_zoom_mouse():
         """Trigger zoom mouse if enabled"""
         if eye_zoom_mouse.zoom_mouse.enabled:
-            eye_zoom_mouse.zoom_mouse.on_pop(eye_zoom_mouse.zoom_mouse.state)
+            print(eye_zoom_mouse.zoom_mouse.state)
+            eye_zoom_mouse.zoom_mouse.on_pop(0)
 
     def mouse_drag():
         """(TEMPORARY) Press and hold/release button 0 depending on state for dragging"""
-        if 1 not in ctrl.mouse_buttons_down():
+        if 0 not in ctrl.mouse_buttons_down():
             # print("start drag...")
             ctrl.mouse_click(button=0, down=True)
             # app.notify("drag started")
