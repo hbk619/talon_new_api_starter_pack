@@ -20,6 +20,9 @@ class Actions:
     def code_private_function_with_args_question(text: str):
         """Inserts function declaration with args and question"""
 
+    def code_let_variable(text: str):
+        """Inserts a let var"""
+
 
 @ctx.action_class("user")
 class user_actions:
@@ -62,3 +65,14 @@ class user_actions:
         actions.user.code_private_function_question(text)
         actions.insert("(")
         actions.key("end enter up end left")
+
+    def code_let_variable(text: str):
+        """Inserts private function declaration"""
+        result = "let(:{})".format(
+            actions.user.formatted_text(
+                text, settings.get("user.code_private_variable_formatter")
+            )
+        )
+
+        actions.user.paste(result)
+        actions.insert(" {")

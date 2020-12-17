@@ -231,3 +231,6 @@ state require <user.format_text>:
 
 ternary <user.text> or <user.text>:
     insert("? {text_1} : {text_2}")
+
+state let <user.text>:
+    user.code_let_variable(text)
