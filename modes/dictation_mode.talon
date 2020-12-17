@@ -68,11 +68,11 @@ formatted <user.format_text>:
 ^format selection <user.formatters>$:
     user.formatters_reformat_selection(formatters)
 #corrections
-scratch that: user.clear_last_utterance()
-scratch selection: edit.delete()
-select that: user.select_last_utterance()
-spell that <user.letters>: auto_insert(letters)
-spell that <user.formatters> <user.letters>:
+(scratch|undo) that: user.clear_last_utterance()
+(scratch|undo) selection: edit.delete()
+select previous: user.select_last_utterance()
+spell (that|it) <user.letters>: auto_insert(letters)
+spell (that|it) <user.formatters> <user.letters>:
     result = user.formatted_text(letters, formatters)
     user.auto_format_pause()
     auto_insert(result)
