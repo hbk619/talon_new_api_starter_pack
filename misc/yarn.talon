@@ -13,3 +13,7 @@ yarn remove$:
 yarn run <phrase>:
     insert("yarn run ")
     insert(phrase)
+yarn test:
+    insert("yarn test\n")
+yarn lint:
+    insert("yarn prettier:fix\n")
