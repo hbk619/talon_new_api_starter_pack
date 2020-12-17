@@ -145,6 +145,23 @@ class Actions:
             global extendCommands
             extendCommands = []
 
+    def mouse_long_right():
+        """click right mouse button, holding it down a little bit longer"""
+        print("mouse long right d")
+        ctrl.mouse_click(button=1, down=True)
+        time.sleep(0.1)
+        ctrl.mouse_click(button=1, up=True)
+
+    def reload_firefox():
+        """Focus and reload firefox"""
+        app = actions.user.get_running_app("Firefox")
+
+        if app and not isinstance(app, str):
+            app.focus()
+            time.sleep(1)
+            actions.key("cmd-r")
+        else:
+            print("did not find Firefox")
 
 ctx.matches = r"""
 app: jetbrains
