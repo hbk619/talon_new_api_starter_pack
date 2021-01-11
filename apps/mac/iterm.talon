@@ -53,3 +53,5 @@ action(edit.page_down):
   key(command-pagedown)
 action(edit.page_up):
   key(command-pageup)
+action(user.file_manager_go_back):
+    insert("../\n")
