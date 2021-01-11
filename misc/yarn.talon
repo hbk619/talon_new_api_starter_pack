@@ -15,5 +15,9 @@ yarn run <phrase>:
     insert(phrase)
 yarn test:
     insert("yarn test\n")
-yarn lint:
+yarn pretty:
     insert("yarn prettier:fix\n")
+yarn lint:
+    insert("yarn eslint\n")
+yarn pretty lint:
+    insert("yarn eslint && yarn prettier:fix\n")
