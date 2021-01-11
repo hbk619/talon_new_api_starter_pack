@@ -92,3 +92,6 @@ go <number>:
     insert(number)
     sleep("100ms")
     key(enter)
+
+action(edit.file_start):
+	key(cmd-up)
