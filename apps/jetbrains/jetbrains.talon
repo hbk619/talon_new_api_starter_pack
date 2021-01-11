@@ -299,6 +299,8 @@ refactor <number> until <number>:
   user.select_range(number_1, number_2)
   user.idea("action Refactorings.QuickListPopupAction")
 clone <number>: user.line_clone(number)
+clone <number> until <number>:
+  user.clone_range(number_1, number_2)
 
 #find/replace
 clear last <user.text> [over]: user.idea("find prev {text}, action EditorBackSpace")

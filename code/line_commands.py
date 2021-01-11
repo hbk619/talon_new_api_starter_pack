@@ -29,6 +29,9 @@ class Actions:
             actions.edit.extend_line_down()
         actions.edit.extend_line_end()
 
+    def clone_range(line_start: int, line_end: int):
+        """Clone lines from line_start to line_end"""
+
     def extend_camel_left():
         """Extends the selection by camel/subword to the left"""
 

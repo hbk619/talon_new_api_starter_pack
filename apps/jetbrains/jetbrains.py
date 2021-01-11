@@ -201,6 +201,21 @@ class user_actions:
         else:
             actions.user.idea("range {} {}".format(line_start, line_end))
 
+    def clone_range(line_start: int, line_end: int):
+        # if it's a single line, select the entire thing including the ending new-line
+        if line_start == line_end:
+            actions.user.idea("goto {} 0".format(line_start))
+            actions.user.idea("action EditorSelectLine"),
+        else:
+            actions.user.idea("range {} {}".format(line_start, line_end+1))
+
+        send_idea_command("action EditorCopy")
+        send_idea_command("goto {} {}".format(line_end, 0))
+        actions.key("end")
+        actions.key("enter")
+        actions.key("enter")
+        send_idea_command("action EditorPaste")
+
     def extend_camel_left():
         actions.user.idea("action EditorPreviousWordInDifferentHumpsModeWithSelection")
 
