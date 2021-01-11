@@ -243,10 +243,6 @@ go sixth tab: user.idea("action GoToTab6")
 go seventh tab: user.idea("action GoToTab7")
 go eighth tab: user.idea("action GoToTab8")
 go ninth tab: user.idea("action GoToTab9")
-action(user.tab_final): user.idea("action GoToLastTab")
-action(app.tab_next): user.idea("action NextTab")
-action(app.tab_previous): user.idea("action PreviousTab")
-action(app.tab_close): user.idea("action CloseActiveTab")
 
 # Quick popups
 change scheme: user.idea("action QuickChangeScheme")
@@ -333,3 +329,5 @@ paste history: key("cmd-shift-v")
 righty: user.mouse_long_right()
 
 reload firefox: user.reload_firefox()
+
+evaluate code: key("option-f8")
