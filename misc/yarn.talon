@@ -21,3 +21,5 @@ yarn lint:
     insert("yarn eslint\n")
 yarn pretty lint:
     insert("yarn eslint && yarn prettier:fix\n")
+yarn story:
+    insert("yarn storybook\n")
