@@ -160,3 +160,10 @@ state spread: "..."
 export default: "export default "
 
 test file: ".test.jsx"
+
+test it <user.text>:
+    insert("it('{text}', () => {")
+    key(enter)
+
+test expect <user.format_text> to be <phrase>:
+    insert("expect({format_text}).toBe({phrase}")
