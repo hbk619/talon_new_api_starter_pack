@@ -194,12 +194,16 @@ state before:
     key(enter)
 
 state allow receive <phrase>:
-    insert("allow ({phrase}).to receive(:")
+    insert("allow({phrase}).to receive(:")
 
-spec context <user.format_text>:
+test context <user.format_text>:
     insert("context '{format_text}'")
 
-spec it <user.text>:
+test describe <user.format_text>:
+    insert("describe '{format_text}' do")
+    key(enter)
+
+test it <user.text>:
     insert("it '{text}' do")
     key(enter)
 
@@ -234,3 +238,6 @@ ternary <user.text> or <user.text>:
 
 state let <user.text>:
     user.code_let_variable(text)
+
+action(user.code_state_do):
+  insert("do |")
