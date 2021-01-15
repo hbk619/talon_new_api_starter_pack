@@ -207,7 +207,7 @@ class user_actions:
             actions.user.idea("goto {} 0".format(line_start))
             actions.user.idea("action EditorSelectLine"),
         else:
-            actions.user.idea("range {} {}".format(line_start, line_end+1))
+            actions.user.idea("range {} {}".format(line_start, line_end))
 
         send_idea_command("action EditorCopy")
         send_idea_command("goto {} {}".format(line_end, 0))
